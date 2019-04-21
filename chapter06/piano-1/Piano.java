@@ -23,6 +23,10 @@ public class Piano extends World
     private  String[] whiteNotes =
         { "3c", "3d", "3e", "3f", "3g", "3a", "3b", "4c", "4d", "4e", "4f", "4g" };
 
+    // Store the computer keyboard keys that black piano keys will respond to
+    private String[] blackKeys =
+        { "w", "e", "", "t", "y", "u", "", "o", "p", "", "]", ""}; 
+
     // Track how many frames have been animated
     private int frames;
 
