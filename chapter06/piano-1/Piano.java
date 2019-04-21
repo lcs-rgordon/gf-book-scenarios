@@ -65,7 +65,7 @@ public class Piano extends World
         if ((frames % 60 == 0) && (position < whiteKeys.length))
         {
             // Create a new Key object
-            Key newKey = new Key(whiteKeys[position], whiteNotes[position]);
+            Key newKey = new Key(whiteKeys[position], whiteNotes[position], false);
             
             // Add the key object to the scenario
             addObject(newKey, 54 + 63 * position, 140);

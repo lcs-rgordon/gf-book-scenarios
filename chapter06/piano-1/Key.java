@@ -13,10 +13,13 @@ public class Key extends Actor
     // Store what sound file to play when pressed
     private String sound;
     
+    // Tracks whether this instance of the Key class is a white key
+    private boolean isKeyWhite;
+    
     /**
      * Create a new key.
      */
-    public Key(String keyName, String soundFile)
+    public Key(String keyName, String soundFile, boolean keyWhite)
     {
         // Key object begins life in the "up" position
         isDown = false;
@@ -24,6 +27,9 @@ public class Key extends Actor
         // Initialize key and sound instance variables
         key = keyName;
         sound = soundFile;
+        
+        // Set what type of key this is instance is
+        isKeyWhite = keyWhite;
     }
 
     /**
