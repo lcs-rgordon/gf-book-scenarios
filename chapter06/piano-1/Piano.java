@@ -36,7 +36,7 @@ public class Piano extends World
     {
         // Say hello to everyone in the class, once each second
         // Be sure to run until the end of the array, but not past it
-        if ((frames % 60 == 0) && (frames / 60 < 10))
+        if ((frames % 60 == 0) && (frames / 60 < peopleInClass.length))
         {
             // Show a value from the array on screen
             showText("Hello, " + peopleInClass[frames / 60], 400, 170);
