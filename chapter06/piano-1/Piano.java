@@ -14,6 +14,10 @@ public class Piano extends World
      */
     private String[] peopleInClass = {"Chelsea", "Sarah", "Jack", "Maxwell", 
             "Justy", "Peter", "Jeewoo", "Brandon", "Minah", "Gavin", "Mr. Gordon"};
+            
+    // Store the computer keyboard keys that white piano keys will respond to
+    private String[] whiteKeys =
+        { "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "\\" };
 
     // Track how many frames have been animated
     private int frames;
