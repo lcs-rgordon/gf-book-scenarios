@@ -30,6 +30,13 @@ public class Key extends Actor
         
         // Set what type of key this is instance is
         isKeyWhite = keyWhite;
+        
+        // By default the piano key is white; when black, change the starting
+        // image
+        if (isKeyWhite == false)
+        {
+            setImage("black-key.png");
+        }
     }
 
     /**
@@ -41,7 +48,7 @@ public class Key extends Actor
         if ( isDown == false && Greenfoot.isKeyDown(key) == true)
         {
             // Make the piano key appear to be down and play the sound
-            setImage("white-key-down.png");
+            keyDown();
             play();
             isDown = true;
         }
@@ -50,7 +57,7 @@ public class Key extends Actor
         if ( isDown == true && Greenfoot.isKeyDown(key) == false )
         {
             // Make the piano key appear to be up
-            setImage("white-key.png");
+            keyUp();
             isDown = false;
         }
     }
@@ -61,6 +68,36 @@ public class Key extends Actor
     public void play()
     {
         Greenfoot.playSound(sound + ".wav");
+    }
+    
+    /**
+     * Make the piano key appear to be down.
+     */
+    private void keyDown()
+    {
+        if (isKeyWhite == true)
+        {
+            setImage("white-key-down.png");
+        }
+        else
+        {
+            setImage("black-key-down.png");
+        }
+    }
+    
+    /**
+     * Make the piano key appear to be up.
+     */
+    private void keyUp()
+    {
+        if (isKeyWhite == true)
+        {
+            setImage("white-key.png");
+        }
+        else
+        {
+            setImage("black-key.png");
+        }
     }
 }
 

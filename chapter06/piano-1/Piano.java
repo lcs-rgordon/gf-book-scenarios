@@ -71,6 +71,35 @@ public class Piano extends World
             addObject(newKey, 54 + 63 * position, 140);
         }
 
+        // Draw all of the black piano keys on the screen
+        // Condition 1: Only add keys on full second increments
+        // Condition 2: Add black keys after white keys are drawn
+        // Condition 3: Stop adding black keys when position is 24
+        if (
+            (frames % 60 == 0) && 
+            (position >= whiteKeys.length) &&
+            (position < blackKeys.length * 2)
+            )
+        {
+
+            // Add black piano key only when correponding keyboard key 
+            // is not blank
+            // Must subtract blackKey array length, since position is already
+            // incremented past 12 (when white keys were added)
+            if (blackKeys[position - blackKeys.length] != "")
+            {
+                // Create a new black Key object
+    
+                Key newKey = new Key(blackKeys[position - blackKeys.length], 
+                                     blackNotes[position - blackKeys.length],
+                                     false);
+                
+                // Add the key object to the scenario
+                addObject(newKey, 85 + 63 * (position - blackKeys.length), 86);
+            }
+        }
+
+        
         // How many frames have been animated?
         showText("Frames: " + frames, 100, 50);
         
