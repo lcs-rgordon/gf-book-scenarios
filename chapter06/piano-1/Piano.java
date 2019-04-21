@@ -9,6 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 public class Piano extends World
 {
     /**
+     * Instance variables / objects
+     * (can be used by any method in this class)
+     */
+    private String[] peopleInClass = {"Chelsea", "Sarah", "Jack", "Maxwell", 
+    "Justy", "Peter", "Jeewoo", "Brandon", "Minah", "Gavin"};
+    
+    /**
      * Make the piano.
      */
     public Piano() 
