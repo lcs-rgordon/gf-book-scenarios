@@ -17,11 +17,20 @@ public class Key extends Actor
         if ( Greenfoot.isKeyDown("g") )
         {
             setImage("white-key-down.png");
+            play();
         }
         else
         {
             setImage("white-key.png");
         }
+    }
+    
+    /**
+     * Play the note of this key.
+     */
+    public void play()
+    {
+        Greenfoot.playSound("3a.wav");
     }
 }
 
