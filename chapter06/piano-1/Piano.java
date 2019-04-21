@@ -12,9 +12,6 @@ public class Piano extends World
      * Instance variables / objects
      * (can be used by any method in this class)
      */
-    private String[] peopleInClass = {"Chelsea", "Sarah", "Jack", "Maxwell", 
-            "Justy", "Peter", "Jeewoo", "Brandon", "Minah", "Gavin", "Mr. Gordon"};
-            
     // Store the computer keyboard keys that white piano keys will respond to
     private String[] whiteKeys =
         { "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "\\" };
@@ -52,14 +49,6 @@ public class Piano extends World
     {
         // Track what position we are in for the array
         int position = frames / 60;
-        
-        // Say hello to everyone in the class, once each second
-        // Be sure to run until the end of the array, but not past it
-        if ((frames % 60 == 0) && (position < peopleInClass.length))
-        {
-            // Show a value from the array on screen
-            showText("Hello, " + peopleInClass[position], 400, 170);
-        }
         
         // Draw all of the white piano keys on the screen
         if ((frames % 60 == 0) && (position < whiteKeys.length))
