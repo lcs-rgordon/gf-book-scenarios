@@ -13,7 +13,7 @@ public class Piano extends World
      * (can be used by any method in this class)
      */
     private String[] peopleInClass = {"Chelsea", "Sarah", "Jack", "Maxwell", 
-            "Justy", "Peter", "Jeewoo", "Brandon", "Minah", "Gavin"};
+            "Justy", "Peter", "Jeewoo", "Brandon", "Minah", "Gavin", "Mr. Gordon"};
 
     // Track how many frames have been animated
     private int frames;
