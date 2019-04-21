@@ -34,8 +34,12 @@ public class Piano extends World
      */
     public void act()
     {
-        // Show a value from the array on screen
-        showText("Hello, " + peopleInClass[2], 400, 170);
+        // Say hello to everyone in the class, once each second
+        if (frames % 60 == 0)
+        {
+            // Show a value from the array on screen
+            showText("Hello, " + peopleInClass[frames / 60], 400, 170);
+        }
         
         // How many frames have been animated?
         showText("Frames: " + frames, 100, 50);
