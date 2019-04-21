@@ -52,6 +52,16 @@ public class Piano extends World
             // Show a value from the array on screen
             showText("Hello, " + peopleInClass[position], 400, 170);
         }
+        
+        // Draw all of the white piano keys on the screen
+        if ((frames % 60 == 0) && (position < whiteKeys.length))
+        {
+            // Create a new Key object
+            Key newKey = new Key(whiteKeys[position], whiteNotes[position]);
+            
+            // Add the key object to the scenario
+            addObject(newKey, 54 + 63 * position, 140);
+        }
 
         // How many frames have been animated?
         showText("Frames: " + frames, 100, 50);
