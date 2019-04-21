@@ -42,16 +42,22 @@ public class Piano extends World
      */
     public void act()
     {
+        // Track what position we are in for the array
+        int position = frames / 60;
+        
         // Say hello to everyone in the class, once each second
         // Be sure to run until the end of the array, but not past it
-        if ((frames % 60 == 0) && (frames / 60 < peopleInClass.length))
+        if ((frames % 60 == 0) && (position < peopleInClass.length))
         {
             // Show a value from the array on screen
-            showText("Hello, " + peopleInClass[frames / 60], 400, 170);
+            showText("Hello, " + peopleInClass[position], 400, 170);
         }
 
         // How many frames have been animated?
         showText("Frames: " + frames, 100, 50);
+        
+        // Show the current array position (index)
+        showText("Array position, or index, is: " + position, 195, 100);
 
         // Track frame count
         frames += 1;        
