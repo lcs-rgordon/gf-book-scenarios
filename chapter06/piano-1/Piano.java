@@ -22,4 +22,13 @@ public class Piano extends World
     {
         super(800, 340, 1);
     }
+    
+    /**
+     * Runs about 60 times each second, until the scenario stops.
+     */
+    public void act()
+    {
+        // Show a value from the array on screen
+        showText("Hello, " + peopleInClass[2], 400, 170);
+    }
 }
