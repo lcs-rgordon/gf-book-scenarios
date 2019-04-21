@@ -13,22 +13,22 @@ public class Piano extends World
      * (can be used by any method in this class)
      */
     private String[] peopleInClass = {"Chelsea", "Sarah", "Jack", "Maxwell", 
-    "Justy", "Peter", "Jeewoo", "Brandon", "Minah", "Gavin"};
-    
+            "Justy", "Peter", "Jeewoo", "Brandon", "Minah", "Gavin"};
+
     // Track how many frames have been animated
     private int frames;
-    
+
     /**
      * Make the piano.
      */
     public Piano() 
     {
         super(800, 340, 1);
-        
+
         // No frames animated at start
         frames = 0;
     }
-    
+
     /**
      * Runs about 60 times each second, until the scenario stops.
      */
@@ -37,13 +37,17 @@ public class Piano extends World
         // Say hello to everyone in the class, once each second
         if (frames % 60 == 0)
         {
-            // Show a value from the array on screen
-            showText("Hello, " + peopleInClass[frames / 60], 400, 170);
+            // Run until the end of the array, but not past it
+            if (frames / 60 < 10)
+            {
+                // Show a value from the array on screen
+                showText("Hello, " + peopleInClass[frames / 60], 400, 170);
+            }
         }
-        
+
         // How many frames have been animated?
         showText("Frames: " + frames, 100, 50);
-        
+
         // Track frame count
         frames += 1;        
     }
