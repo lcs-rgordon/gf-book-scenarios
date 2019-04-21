@@ -8,13 +8,22 @@ public class Key extends Actor
      */
     private boolean isDown;
     
+    // Store what keyboard key to respond to
+    private String key;
+    // Store what sound file to play when pressed
+    private String sound;
+    
     /**
      * Create a new key.
      */
-    public Key()
+    public Key(String keyName, String soundFile)
     {
         // Key object begins life in the "up" position
         isDown = false;
+        
+        // Initialize key and sound instance variables
+        key = keyName;
+        sound = soundFile;
     }
 
     /**
@@ -23,7 +32,7 @@ public class Key extends Actor
     public void act()
     {
         // When the piano key is not down, and the keyboard key was just pressed
-        if ( isDown == false && Greenfoot.isKeyDown("g") == true)
+        if ( isDown == false && Greenfoot.isKeyDown(key) == true)
         {
             // Make the piano key appear to be down and play the sound
             setImage("white-key-down.png");
@@ -32,7 +41,7 @@ public class Key extends Actor
         }
         
         // When the piano key is down, and the keyboard key was just released
-        if ( isDown == true && Greenfoot.isKeyDown("g") == false )
+        if ( isDown == true && Greenfoot.isKeyDown(key) == false )
         {
             // Make the piano key appear to be up
             setImage("white-key.png");
@@ -45,7 +54,7 @@ public class Key extends Actor
      */
     public void play()
     {
-        Greenfoot.playSound("3a.wav");
+        Greenfoot.playSound(sound + ".wav");
     }
 }
 
